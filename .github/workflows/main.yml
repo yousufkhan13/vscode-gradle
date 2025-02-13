@@ -153,9 +153,7 @@ jobs:
       - name: Retry test extension attempt 2
         uses: gradle/gradle-build-action@v2
         continue-on-error: true
-        if: steps.retry1.outcome=='failure'
-        id: retry2
-        with:
+        
           arguments: testVsCode
         env:
           DISPLAY: ":99.0"
